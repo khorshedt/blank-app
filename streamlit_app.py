@@ -5,3 +5,4 @@ st.title("🎈 Tarek Khorshed's App 2025")
 
 
 st.write("My first python APP 2025.")
+st.write("Now you need to code ya Aloshi")
