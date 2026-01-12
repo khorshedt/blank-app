@@ -17,4 +17,4 @@ df = pd.DataFrame({
   'column2': [10, 20, 30, 40]
 })
 
-df
+st.write(df)
