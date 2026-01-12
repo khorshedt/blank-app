@@ -23,7 +23,7 @@ with st.form("data_form"):
     if submit:
         # Create a DataFrame for the new record
         #data_record = [{"subject_id": id, "title": title}]
-        data_record = [{"subject_id": "NULL", "title": title}]
+        data_record = [{"subject_id": 0, "title": title}]
         df_data = pd.DataFrame(data_record)
         
         # Write to SQLite
@@ -33,7 +33,7 @@ with st.form("data_form"):
 
 
         cur = conn.cursor()
-        cur.executemany("INSERT INTO Subject VALUES(:subject_id, :title)", data_record)
+        cur.executemany("INSERT INTO Subject VALUES(NULL, :title)", data_record)
         conn.commit() 
 
 
