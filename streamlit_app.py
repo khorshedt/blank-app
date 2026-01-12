@@ -34,7 +34,7 @@ with st.form("data_form"):
         cur = conn.cursor()
 
 
-        cur.executemany("INSERT INTO Subject VALUES(?, ?)", data_record)
+        cur.executemany("INSERT INTO Subject VALUES(:subject_id, title)", data_record)
         conn.commit() 
         
 
