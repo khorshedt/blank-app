@@ -21,6 +21,17 @@ st.session_state.txtName
 #st.session_state.mySlider
 
 
+# Session states
+if 'key' not in st.session_state:
+    st.session_state.key = 'value'
+
+st.session_state.key = 'value2'     # Attribute API
+st.session_state['key'] = 'value2'  # Dictionary like API
+
+st.write(st.session_state)
+
+
+
 if st.checkbox('Show dataframe'):
     chart_data = pd.DataFrame(
        np.random.randn(20, 3),
