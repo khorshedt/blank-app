@@ -34,6 +34,17 @@ with st.form("data_form"):
         cur = conn.cursor()
         cur.executemany("INSERT INTO Subject VALUES(:subject_id, :title)", data_record)
         conn.commit() 
+
+
+
+        # Read the entire table into a DataFrame
+        df = pd.read_sql("SELECT * FROM Subject", conn)
+        st.write(df)
+        #st.dataframe(df)
+
+
+
+
         conn.close()
 
 
