@@ -22,7 +22,8 @@ with st.form("data_form"):
     
     if submit:
         # Create a DataFrame for the new record
-        data_record = [{"subject_id": id, "title": title}]
+        #data_record = [{"subject_id": id, "title": title}]
+        data_record = [{"subject_id": "NULL", "title": title}]
         df_data = pd.DataFrame(data_record)
         
         # Write to SQLite
