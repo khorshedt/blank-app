@@ -11,6 +11,15 @@ st.write("Now you need to code ya Aloshi")
 st.write("Test2")
 
 
+x = st.slider('x', key="mySLider")  
+st.write(x, 'squared is', x * x)
+
+st.text_input("Your name", key="txtName")
+
+# You can access the value at any point with:
+st.session_state.txtName
+st.session_state.mySlider
+
 
 
 df = pd.DataFrame({
@@ -29,6 +38,7 @@ st.dataframe(df2)
 # static table
 st.table(df2)  
 
+# Highlight max value in each row
 df3 = pd.DataFrame(
     np.random.randn(10, 20),
     columns=('col %d' % i for i in range(20)))
