@@ -2,18 +2,35 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-
+import sqlite3 as sql
 
 
 st.title("🎈 Tarek Khorshed's App 2025")
-st.write("Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/).")
-
-st.write("Hello Alei")
-
-
-st.write("My first python APP 2025.")
-st.write("Now you need to code ya Aloshi")
 st.write("Test2")
+
+
+MyDB = "CS IA DB.db"
+
+# Create DB Connection 
+conn = sql.connect(MyDB)
+
+with st.form("data_form"):
+    title = st.text_input("Subject Title")
+    id = st.number_input("id", min_value=0, max_value=120)
+    submit = st.form_submit_button("Save")
+    
+    if submit:
+        # Create a DataFrame for the new record
+        data_record = [{"title": [title], "id": [id]}]
+        df_data = pd.DataFrame(data_record)
+        
+        # Write to SQLite
+        # 'append' adds to the table; 'replace' would overwrite it        
+        df_data.to_sql("Subject", conn, if_exists="replace", index=False)
+        conn.close()
+        
+
+
 
 
 x = st.slider('x', key="mySLider")  
@@ -34,6 +51,12 @@ st.session_state.key = 'value2'     # Attribute API
 st.session_state['key'] = 'value2'  # Dictionary like API
 
 st.write(st.session_state)
+
+
+
+
+
+
 
 
 
