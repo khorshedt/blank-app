@@ -18,7 +18,7 @@ st.text_input("Your name", key="txtName")
 
 # You can access the value at any point with:
 st.session_state.txtName
-st.session_state.mySlider
+#st.session_state.mySlider
 
 
 
