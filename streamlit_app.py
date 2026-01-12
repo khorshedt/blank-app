@@ -28,3 +28,9 @@ st.dataframe(df2)
 
 # static table
 st.table(df2)  
+
+df3 = pd.DataFrame(
+    np.random.randn(10, 20),
+    columns=('col %d' % i for i in range(20)))
+
+st.dataframe(df3.style.highlight_max(axis=0))
