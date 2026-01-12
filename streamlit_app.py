@@ -14,6 +14,7 @@ MyDB = "CS IA DB.db"
 # Create DB Connection 
 conn = sql.connect(MyDB)
 
+
 with st.form("data_form"):
     title = st.text_input("Subject Title")
     id = st.number_input("id", min_value=0, max_value=120)
@@ -26,7 +27,7 @@ with st.form("data_form"):
         
         # Write to SQLite
         # 'append' adds to the table; 'replace' would overwrite it        
-        df_data.to_sql("Subject", conn, if_exists="replace", index=False)
+        df_data.to_sql("Subject", conn, if_exists="append", index=False)
         conn.close()
         
 
