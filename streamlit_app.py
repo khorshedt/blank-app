@@ -44,6 +44,10 @@ with st.form("data_form"):
         #st.dataframe(df)
 
 
+        conn1 = st.connection(MyDB)
+        df1 = conn.query("select * from Subject")
+        st.dataframe(df1)
+
 
 
         conn.close()
