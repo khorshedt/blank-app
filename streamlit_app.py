@@ -27,4 +27,4 @@ df2 = np.random.randn(10, 20)
 st.dataframe(df2.style.highlight_max(axis=0))
 
 # static table
-st.table(df2)  
+#st.table(df2)  
