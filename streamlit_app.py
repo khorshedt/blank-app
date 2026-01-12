@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 
 st.title("🎈 Tarek Khorshed's App 2025")
 #st.write("Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/).")
@@ -18,3 +19,8 @@ df = pd.DataFrame({
 })
 
 st.write(df)
+
+
+
+df2 = np.random.randn(10, 20)
+st.dataframe(df2)
