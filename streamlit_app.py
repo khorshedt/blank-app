@@ -27,16 +27,14 @@ with st.form("data_form"):
         
         # Write to SQLite
         # 'append' adds to the table; 'replace' would overwrite it        
-        #df_data.to_sql("Subject", conn, if_exists="append", index=False)
-        #conn.close()
-
-
-        cur = conn.cursor()
-
-
-        cur.executemany("INSERT INTO Subject VALUES(:subject_id, :title)", data_record)
-        conn.commit() 
+        df_data.to_sql("Subject", conn, if_exists="append", index=False)
         
+
+
+        #cur = conn.cursor()
+        #cur.executemany("INSERT INTO Subject VALUES(:subject_id, :title)", data_record)
+        conn.commit() 
+        conn.close()
 
 
 
