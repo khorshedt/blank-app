@@ -2,8 +2,13 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
+
+
+
 st.title("🎈 Tarek Khorshed's App 2025")
-#st.write("Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/).")
+st.write("Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/).")
+
+st.write("Hello Alei")
 
 
 st.write("My first python APP 2025.")
