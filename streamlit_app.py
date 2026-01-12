@@ -21,6 +21,14 @@ st.session_state.txtName
 #st.session_state.mySlider
 
 
+if st.checkbox('Show dataframe'):
+    chart_data = pd.DataFrame(
+       np.random.randn(20, 3),
+       columns=['a', 'b', 'c'])
+
+    chart_data
+
+
 
 df = pd.DataFrame({
   'column1': [1, 2, 3, 4],
