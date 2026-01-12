@@ -5,6 +5,22 @@ import numpy as np
 import sqlite3 as sql
 
 
+
+# Define the pages
+main_page = st.Page("main_page.py", title="Main Page", icon="🎈")
+page_2 = st.Page("page_2.py", title="Page 2", icon="❄️")
+page_3 = st.Page("page_3.py", title="Page 3", icon="🎉")
+
+# Set up navigation
+pg = st.navigation([main_page, page_2, page_3])
+
+# Run the selected page
+pg.run()
+
+
+
+
+
 st.title("🎈 Tarek Khorshed's App 2025")
 st.write("Test2")
 
@@ -43,10 +59,6 @@ with st.form("data_form"):
         st.write(df)
         #st.dataframe(df)
 
-
-        conn1 = st.connection(MyDB)
-        df1 = conn.query("select * from Subject")
-        st.dataframe(df1)
 
 
 
