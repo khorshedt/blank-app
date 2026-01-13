@@ -38,5 +38,22 @@ conn = sql.connect(MyDB)
 #cur.execute("ALTER TABLE GoalPoints ADD COLUMN description TEXT")
 #conn.commit() 
 
+
+if "first_load" not in st.session_state:
+    st.session_state.first_load = "YES"
+
+st.markdown("## **My Tasks**")
+# Read and display Tasks
+df_task = pd.read_sql("SELECT * FROM Task", conn)
+task_titles = df_task['title'].tolist()
+st.write(df_task)
+
+st.markdown("## **My Goal Planning**")
+# Read data for Goal points from the database into a DataFrame and display it
+df = pd.read_sql("SELECT * FROM GoalPoints", conn)
+st.write(df)
+    
 conn.close()
 st.rerun()
+
+
