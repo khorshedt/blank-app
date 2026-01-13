@@ -34,9 +34,9 @@ MyDB = "CS IA DB.db"
 # Create DB Connection 
 conn = sql.connect(MyDB)
 
-cur = conn.cursor()
-cur.execute("ALTER TABLE GoalPoints ADD COLUMN description TEXT")
-conn.commit() 
+#cur = conn.cursor()
+#cur.execute("ALTER TABLE GoalPoints ADD COLUMN description TEXT")
+#conn.commit() 
 
 conn.close()
 st.rerun()
