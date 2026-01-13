@@ -17,7 +17,7 @@ MyDB = "CS IA DB.db"
 conn = sql.connect(MyDB)
 
 # Read the entire table into a DataFrame
-df = pd.read_sql("SELECT * FROM Goal_Points", conn)
+df = pd.read_sql("SELECT * FROM GoalPoints", conn)
 st.write(df)
 
 # Read subjects
