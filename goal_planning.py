@@ -31,8 +31,7 @@ st.write(df)
 with st.form("data_form", clear_on_submit=True):
     goal_date = st.date_input("Today's Date", value="today",format=st.session_state.gDateFormat)
     description = st.text_input("Goal Plan Description", key="txtdescription")
-    #goal_points = st.text_input("Goal Points", key="txtGoalPoints")
-    goal_points = st.sidebar.slider('Goal Points',0.0, 100.0, key="txtGoalPoints")
+    goal_points = st.slider('Goal Points',0, 100, key="txtGoalPoints")
 
     submit = st.form_submit_button("Add Goal")
 
