@@ -25,7 +25,7 @@ st.write(df_task)
 
 st.markdown("## **My Goal Planning**")
 # Read data for Goal points from the database into a DataFrame and display it
-df = pd.read_sql("SELECT * FROM GoalPoints", conn)
+df = pd.read_sql("SELECT goalpoints_id,user_id, description, date, targetpoints, progresspoints FROM GoalPoints", conn)
 st.write(df)
 
 with st.form("data_form", clear_on_submit=True):
