@@ -16,31 +16,40 @@ MyDB = "CS IA DB.db"
 # Create DB Connection 
 conn = sql.connect(MyDB)
 
+# Read the entire table into a DataFrame
+df = pd.read_sql("SELECT * FROM GoalPoints", conn)
+st.write(df)
 
-st.markdown("## **My Tasks**")
-# Read and display Tasks
+# Read subjects
+df_subject = pd.read_sql("SELECT subject_id, title FROM Subject", conn)
+subject_titles = df_subject['title'].tolist()
+
+# Read Tasks
 df_task = pd.read_sql("SELECT * FROM Task", conn)
 task_titles = df_task['title'].tolist()
 
 
-st.markdown("## **My Goal Planning**")
-# Read data for Goal points from the database into a DataFrame and display it
-df = pd.read_sql("SELECT * FROM GoalPoints", conn)
-st.write(df)
 
 with st.form("data_form", clear_on_submit=True):
-    goal_date = st.date_input("Today's Date", value="today",format=st.session_state.gDateFormat)
-    description = st.text_input("Goal Plan Description", key="txtdescription")
-    #goal_points = st.text_input("Goal Points", key="txtGoalPoints")
-    goal_points = st.sidebar.slider('Goal Points',0.0, 100.0, key="txtGoalPoints")
+    todays_date = st.date_input("Today's Date", value="today",format=st.session_state.gDateFormat)
+ 
+    subject = st.selectbox("Subject Name:", options = subject_titles)    
+    task = st.selectbox("Task:", options = task_titles)   
+
+    goal_points = st.text_input("Goal Points", key="txtGoalPoints")
+ 
 
     submit = st.form_submit_button("Add Goal")
 
 
     if submit:
+        selected_task_id = int(df_task.loc[df_task['title'] == task, 'task_id'].iloc[0])
+        st.write(selected_task_id)    
+        st.write(task)
+        st.write(goal_points)
 
         # Create a DataFrame for the new record
-        data_record = [{"goalpoints_id":0, "user_id": st.session_state.gCurrentUser, "Description":description, "date":goal_date, "targetpoints":goal_points, "progresspoints":0}]
+        #data_record = [{"task_id":0,   "subject_id": selected_subject_id, "user_id": 0, "title":title, "deadline":deadline, "difficulty":difficulty}]
         #df_data = pd.DataFrame(data_record)
         
 
