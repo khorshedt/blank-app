@@ -48,7 +48,7 @@ with st.form("data_form", clear_on_submit=True):
         #st.write(title)
 
         # Create a DataFrame for the new record
-        data_record = [{"task_id":0,   "subject_id": selected_subject_id, "user_id": st.session_state.gCurrentUser, "title":title, "deadline":deadline, "difficulty":difficulty}]
+        data_record = [{"task_id":0,   "subject_id": selected_subject_id, "user_id": st.session_state.gCurrentUser, "title":title, "deadline":deadline, "difficulty":difficulty, "status":"PENDING"}]
         df_data = pd.DataFrame(data_record)
         
 
