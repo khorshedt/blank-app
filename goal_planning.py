@@ -36,7 +36,7 @@ with st.form("data_form", clear_on_submit=True):
     subject = st.selectbox("Subject Name:", options = subject_titles)    
     task = st.selectbox("Task:", options = task_titles)   
 
-    goal_points = st.text_input("Task Title", key="txtTitle")
+    goal_points = st.text_input("Goal Points", key="txtGoalPoints")
  
 
     submit = st.form_submit_button("Add Goal")
@@ -45,7 +45,8 @@ with st.form("data_form", clear_on_submit=True):
     if submit:
         selected_task_id = int(df_task.loc[df_task['title'] == task, 'task_id'].iloc[0])
         st.write(selected_task_id)    
-        st.write(title)
+        st.write(task)
+        st.write(goal_points)
 
         # Create a DataFrame for the new record
         #data_record = [{"task_id":0,   "subject_id": selected_subject_id, "user_id": 0, "title":title, "deadline":deadline, "difficulty":difficulty}]
