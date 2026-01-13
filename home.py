@@ -1,4 +1,6 @@
 import streamlit as st
+import pandas as pd
+import sqlite3 as sql
 
 # Home page content
 
@@ -27,3 +29,14 @@ with col3:
 
 
 
+MyDB = "CS IA DB.db"
+
+# Create DB Connection 
+conn = sql.connect(MyDB)
+
+cur = conn.cursor()
+cur.execute("ALTER TABLE task ADD COLUMN status TEXT")
+conn.commit() 
+
+conn.close()
+st.rerun()
