@@ -24,7 +24,9 @@ st.write(df)
 df_subject = pd.read_sql("SELECT subject_id, title FROM Subject", conn)
 subject_titles = df_subject['title'].tolist()
 
-
+# Read Tasks
+df_task = pd.read_sql("SELECT * FROM Task", conn)
+Task_titles = df_task['title'].tolist()
 
 
 
