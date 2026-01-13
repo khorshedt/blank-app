@@ -21,7 +21,9 @@ with col2:
         st.switch_page("task_data.py") 
 
 
-
+with col3:
+    if st.button("Goal Planning"):
+        st.switch_page("goal_planning.py") 
 
 
 
