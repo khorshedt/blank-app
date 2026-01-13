@@ -40,12 +40,12 @@ with st.form("data_form", clear_on_submit=True):
     if submit:
 
         # Create a DataFrame for the new record
-        data_record = [{"goalpoints_id":0, "user_id": st.session_state.gCurrentUser, "Description":description, "date":goal_date, "targetpoints":goal_points, "progresspoints":0}]
+        data_record = [{"goalpoints_id":0, "user_id": st.session_state.gCurrentUser, "description":description, "date":goal_date, "targetpoints":goal_points, "progresspoints":0}]
         #df_data = pd.DataFrame(data_record)
         
 
-        #cur = conn.cursor()
-        #cur.executemany("INSERT INTO Task VALUES(NULL,:subject_id, :user_id, :title, :deadline, :difficulty)", data_record)
+        cur = conn.cursor()
+        cur.executemany("INSERT INTO GoalPoints VALUES(NULL,:user_id, :description, :date, :targetpoints, :progresspoints)", data_record)
         #conn.commit() 
 
         st.session_state.first_load = "NO"
@@ -53,7 +53,7 @@ with st.form("data_form", clear_on_submit=True):
     
 
         conn.close()
-        #st.rerun()
+        st.rerun()
         
 
 
