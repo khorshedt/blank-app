@@ -1,6 +1,8 @@
 import streamlit as st 
 
-
+# Init Session States
+st.session_state.gCurrentUser = 1
+st.session_state.gDateFormat = "DD/MM/YYYY"
 
 
 # Define the pages
