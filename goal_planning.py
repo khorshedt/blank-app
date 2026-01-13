@@ -45,7 +45,7 @@ with st.form("data_form", clear_on_submit=True):
 
         cur = conn.cursor()
         cur.executemany("INSERT INTO GoalPoints VALUES(NULL,:user_id, :description, :date, :targetpoints, :progresspoints)", data_record)
-        #conn.commit() 
+        conn.commit() 
 
         st.session_state.first_load = "NO"
 
