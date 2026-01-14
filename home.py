@@ -20,7 +20,7 @@ today = dt.now().strftime("%d, %B %Y")
 st.markdown(
     f"""
     <div style="display: flex; align-items: baseline; gap: 15px;">
-        <span style="font-size: 42px; font-weight: bold; color: #000000;">Today's Date is:</span>
+        <span style="font-size: 42px; font-weight: bold; color: #000000;">Today's Date:</span>
         <span style="font-size: 42px; font-weight: bold; color: #003366;">{today}</span>
     </div>
     """, 
@@ -32,7 +32,7 @@ def DisplayNumber(label, value):
     st.markdown(
         f"""
         <div style="text-align: left;">
-            <p style="font-size: 16px; font-weight: 400; color: #666; margin-bottom: 0px;">{label}</p>
+            <p style="font-size: 22px; font-weight: 400; color: #666; margin-bottom: 0px;">{label}</p>
             <p style="font-size: 42px; font-weight: bold; color: #003366; margin-top: -10px;">{value}</p>
         </div>
         """,
@@ -42,19 +42,32 @@ def DisplayNumber(label, value):
 
 st.divider()
 
-# Create 4 columns
-col1, col2, col3, col4 = st.columns(4)
+# Create 3 columns
+col1, col2, col3 = st.columns(3)
 
 with col1:
     DisplayNumber("Current Activity", "NONE")
 
 with col2:
-    DisplayNumber("Goal Points", "0")
+    DisplayNumber("Start Time", "0")
 
 with col3:
+    DisplayNumber("End Time", "0")
+
+
+
+st.divider()
+
+# Create 4 columns
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    DisplayNumber("Goal Points", "0")
+
+with col2:
     DisplayNumber("Progress Points", "0")
 
-with col4:
+with col3:
     DisplayNumber("Progress %", "0.8%")
 
 
