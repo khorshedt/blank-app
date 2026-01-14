@@ -20,7 +20,7 @@ today = dt.now().strftime("%d, %B %Y")
 st.markdown(
     f"""
     <div style="display: flex; align-items: baseline; gap: 15px;">
-        <span style="font-size: 42px; font-weight: bold; color: #000000;">Today's Date:</span>
+        <span style="font-size: 42px; font-weight: bold; color: #000000;">Today's Date is:</span>
         <span style="font-size: 42px; font-weight: bold; color: #003366;">{today}</span>
     </div>
     """, 
