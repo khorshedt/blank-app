@@ -1,16 +1,31 @@
 import streamlit as st
 import pandas as pd
 import sqlite3 as sql
+import datetime as dt
+from datetime import datetime as dt
 
 # Home page content
-
-st.title("Alei Khorshed - Planning App")
 st.write("IBDP - Computer Science - IA")
+st.title("Alei Khorshed - Planning App")
+
 
 #st.markdown("# Home 🏠")
 st.sidebar.markdown("# Home 🏠")
 
 
+
+# Get today's date in a specific format (day, month year)
+today = dt.now().strftime("%d, %B %Y")
+
+st.markdown(
+    f"""
+    <div style="display: flex; align-items: baseline; gap: 15px;">
+        <span style="font-size: 42px; font-weight: bold; color: #000000;">Today's Date:</span>
+        <span style="font-size: 42px; font-weight: bold; color: #003366;">{today}</span>
+    </div>
+    """, 
+    unsafe_allow_html=True
+)
 
 def DisplayNumber(label, value):
     # Define a function to display a small title and a large bold dark blue number  
@@ -31,16 +46,16 @@ st.divider()
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-    DisplayNumber("Total Revenue", "$1.2M")
+    DisplayNumber("Current Activity", "NONE")
 
 with col2:
-    DisplayNumber("Active Users", "45.2K")
+    DisplayNumber("Goal Points", "0")
 
 with col3:
-    DisplayNumber("Conversion Rate", "3.4%")
+    DisplayNumber("Progress Points", "0")
 
 with col4:
-    DisplayNumber("Churn Rate", "0.8%")
+    DisplayNumber("Progress %", "0.8%")
 
 
 
