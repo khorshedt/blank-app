@@ -12,11 +12,8 @@ st.sidebar.markdown("# Home 🏠")
 
 
 
-def styled_metric(label, value):
-    """
-    Renders a custom styled metric with a small title 
-    and a large, bold, dark blue number.
-    """
+def DisplayNumber(label, value):
+    # Define a function to display a small title and a large bold dark blue number  
     st.markdown(
         f"""
         <div style="text-align: left;">
@@ -28,26 +25,26 @@ def styled_metric(label, value):
     )
 
 
-#st.divider()
+st.divider()
 
 # Create 4 columns
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-    styled_metric("Total Revenue", "$1.2M")
+    DisplayNumber("Total Revenue", "$1.2M")
 
 with col2:
-    styled_metric("Active Users", "45.2K")
+    DisplayNumber("Active Users", "45.2K")
 
 with col3:
-    styled_metric("Conversion Rate", "3.4%")
+    DisplayNumber("Conversion Rate", "3.4%")
 
 with col4:
-    styled_metric("Churn Rate", "0.8%")
+    DisplayNumber("Churn Rate", "0.8%")
 
 
 
-
+st.divider()
 # Create 3 equal-width columns
 col1, col2, col3 = st.columns(3)
 
