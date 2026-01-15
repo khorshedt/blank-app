@@ -77,11 +77,19 @@ def goal_timer():
     current_time = dt.now().strftime("%H:%M:%S")
     st.markdown(
         f"""
-        <div style="padding: 20px; border: 1px solid #ddd; border-radius: 10px; background-color: #f9f9f9;">
-            <p style="margin: 0; color: #666;">Current Session Time</p>
-            <h2 style="margin: 0; color: #003366;">{current_time}</h2>
+        <div style="
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 5px;
+            background-color: #f0f2f6;
+            border: 1px solid #d1d5db;
+            width: fit-content;
+            margin-top: 10px;
+        ">
+            <span style="font-size: 14px; color: #555; font-weight: bold; margin-right: 10px;">SESSION:</span>
+            <span style="font-size: 18px; font-family: monospace; color: #003366; font-weight: bold;">{current_time}</span>
         </div>
-        """, 
+        """,
         unsafe_allow_html=True
     )
 
