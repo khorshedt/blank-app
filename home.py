@@ -86,8 +86,8 @@ def goal_timer():
             width: fit-content;
             margin-top: 10px;
         ">
-            <span style="font-size: 14px; color: #555; font-weight: bold; margin-right: 10px;">SESSION:</span>
-            <span style="font-size: 18px; font-family: monospace; color: #003366; font-weight: bold;">{current_time}</span>
+            <span style="font-size: 22px; color: #555; font-weight: bold; margin-right: 10px;">Current Session Time:</span>
+            <span style="font-size: 42px; font-family: monospace; color: #003366; font-weight: bold;">{current_time}</span>
         </div>
         """,
         unsafe_allow_html=True
