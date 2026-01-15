@@ -40,36 +40,6 @@ def DisplayNumber(label, value):
     )
 
 
-st.divider()
-
-# Create 3 columns
-col1, col2, col3 = st.columns(3)
-
-with col1:
-    DisplayNumber("Current Activity", "NONE")
-
-with col2:
-    DisplayNumber("Start Time", "0")
-
-with col3:
-    DisplayNumber("End Time", "0")
-
-
-
-st.divider()
-
-# Create 4 columns
-col1, col2, col3 = st.columns(3)
-
-with col1:
-    DisplayNumber("Goal Points", "0")
-
-with col2:
-    DisplayNumber("Progress Points", "0")
-
-with col3:
-    DisplayNumber("Progress %", "0.8%")
-
 
 @st.fragment(run_every="1s")
 def goal_timer():
@@ -95,6 +65,41 @@ def goal_timer():
 
 # Call the fragment
 goal_timer()
+
+
+st.divider()
+
+# Create 4 columns
+col1, col2, col3, col4 = st.columns(4)
+
+with col1:
+    DisplayNumber("Current Activity", "NONE")
+
+with col2:
+    DisplayNumber("Start Time", "0")
+
+with col3:
+    DisplayNumber("End Time", "0")
+
+with col4:
+    goal_timer()
+
+
+st.divider()
+
+# Create 3 columns
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    DisplayNumber("Goal Points", "0")
+
+with col2:
+    DisplayNumber("Progress Points", "0")
+
+with col3:
+    DisplayNumber("Progress %", "0.8%")
+
+
 
 
 st.divider()
