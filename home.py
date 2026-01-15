@@ -71,6 +71,23 @@ with col3:
     DisplayNumber("Progress %", "0.8%")
 
 
+@st.fragment(run_every="1s")
+def goal_timer():
+    # This specific function will rerun every 1 second
+    current_time = dt.now().strftime("%H:%M:%S")
+    st.markdown(
+        f"""
+        <div style="padding: 20px; border: 1px solid #ddd; border-radius: 10px; background-color: #f9f9f9;">
+            <p style="margin: 0; color: #666;">Current Session Time</p>
+            <h2 style="margin: 0; color: #003366;">{current_time}</h2>
+        </div>
+        """, 
+        unsafe_allow_html=True
+    )
+
+# Call the fragment
+goal_timer()
+
 
 st.divider()
 # Create 3 equal-width columns
