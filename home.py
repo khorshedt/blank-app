@@ -56,12 +56,25 @@ def goal_timer():
             width: fit-content;
             margin-top: 10px;
         ">
-            <span style="font-size: 22px; color: #555; font-weight: bold; margin-right: 10px;">Current Session Time:</span>
+            <span style="font-size: 22px; color: #555; font-weight: bold; margin-right: 10px;">Session Time:</span>
             <span style="font-size: 42px; font-family: monospace; color: #003366; font-weight: bold;">{current_time}</span>
         </div>
         """,
         unsafe_allow_html=True
     )
+
+def timer_column():
+    current_time = dt.now().strftime("%H:%M:%S")
+    st.markdown(
+        f"""
+        <div style="text-align: left;">
+            <p style="font-size: 22px; font-weight: 600; color: #000000; margin-bottom: 0px;">Session Time</p>
+            <p style="font-size: 42px; font-weight: bold; color: #003366; margin-top: -10px; font-family: monospace;">{current_time}</p>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
 
 # Call the fragment
 goal_timer()
@@ -82,7 +95,7 @@ with col3:
     DisplayNumber("End Time", "0")
 
 with col4:
-    goal_timer()
+    timer_column()
 
 
 st.divider()
